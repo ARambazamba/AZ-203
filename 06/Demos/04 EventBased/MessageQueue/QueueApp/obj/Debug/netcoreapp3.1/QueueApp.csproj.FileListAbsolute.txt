@@ -1,0 +1,14 @@
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\bin\Debug\netcoreapp3.1\QueueApp.exe
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\bin\Debug\netcoreapp3.1\QueueApp.deps.json
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\bin\Debug\netcoreapp3.1\QueueApp.runtimeconfig.json
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\bin\Debug\netcoreapp3.1\QueueApp.runtimeconfig.dev.json
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\bin\Debug\netcoreapp3.1\QueueApp.dll
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\bin\Debug\netcoreapp3.1\QueueApp.pdb
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\obj\Debug\netcoreapp3.1\QueueApp.csprojAssemblyReference.cache
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\obj\Debug\netcoreapp3.1\QueueApp.AssemblyInfoInputs.cache
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\obj\Debug\netcoreapp3.1\QueueApp.AssemblyInfo.cs
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\obj\Debug\netcoreapp3.1\QueueApp.dll
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\obj\Debug\netcoreapp3.1\QueueApp.pdb
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\bin\Debug\netcoreapp3.1\Microsoft.WindowsAzure.Storage.dll
+H:\Classes\AZ-203\Demos\06\04 EventBased\MessageQueue\QueueApp\obj\Debug\netcoreapp3.1\QueueApp.csproj.CopyComplete

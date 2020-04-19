@@ -1,0 +1,27 @@
+grp=az-203
+appPlan=appPlan$RANDOM
+web=food-web-$RANDOM
+
+# create a resource group
+az group create --location westeurope --name $grp
+
+# create an App Service plan
+az appservice plan create --name $appPlan --resource-group $grp --sku FREE
+
+# create a Web App
+az webapp create --name $web --resource-group $grp --plan $appPlan
+
+# print out the FQDN for the Web App
+echo http://$web.azurewebsites.net
+
+# Manual Deployment:
+# Open Terminal in ./FoodWebMVC
+# Execute: dotnet restore, dotnet run, check https://localhost:5001, press ctrl+c, dotnet publish
+# Use App Service Extension to deploy to website
+
+# Automated Deployment:
+gitrepo="https://github.com/ARambazamba/FoodApp"
+dir="FoodApi"
+
+az webapp deployment source config -n $web -g $grp -u $gitrepo --branch master --manual-integration --app-working-dir
+

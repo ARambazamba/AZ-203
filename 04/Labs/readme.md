@@ -1,0 +1,415 @@
+---
+lab:
+    title: 'Lab: Access resource secrets securely across services'
+    module: 'AZ-203T04-A: Implement Azure security'
+---
+
+# Lab: Access resource secrets securely across services
+# Student lab manual
+
+## Lab scenario
+
+Your company has a data-sharing business-to-business (B2B) agreement with another local business in which you are expected to parse a file that is dropped off nightly. To keep things simple, the second company has decided to drop the file as a Microsoft Azure Storage blob every night. You are now tasked with devising a way to securely access the file and generate a secure URL that can be used by any internal system to access the blob without exposing the file to the internet. You have decided to use Microsoft Azure Key Vault to store the credentials for the storage account and Azure Functions to write the code necessary to access the file securely without storing credentials in plain text or exposing the file to the internet.
+
+## Objectives
+
+After you complete this lab, you will be able to:
+
+-   Create an Azure Key Vault and store secrets in the Key Vault.
+
+-   Create a server-assigned managed identity for an Azure App Service instance.
+
+-   Create an Azure Key Vault access policy for an Azure Active Directory identity or application.
+
+-   Use the Azure Storage .NET software development kit (SDK) to securely download a blob.
+
+## Lab setup
+
+-   **Estimated Time**: 45 minutes
+
+## Instructions
+
+### Before you start
+
+#### Sign in to the lab virtual machine
+
+Ensure that you are signed in to your **Windows 10** virtual machine by using the following credentials:
+    
+-   **Username**: Admin
+
+-   **Password**: Pa55w.rd
+
+#### Review installed applications
+
+Observe the taskbar located at the bottom of your **Windows 10** desktop. The taskbar contains the icons for the applications that you will use in this lab:
+
+-   Microsoft Edge
+
+-   File Explorer
+
+#### Download the lab files
+
+1.  On the taskbar, select the **Windows PowerShell** icon.
+
+1.  In the PowerShell command prompt, change the current working directory to the **Allfiles (F):\\** path:
+
+    ```powershell
+    cd F:
+    ```
+
+1.  Within the command prompt, enter the following command and press Enter to clone the **microsoftlearning/AZ-203-DevelopingSolutionsforMicrosoftAzure** project hosted on GitHub into the **Allfiles (F):\\** drive:
+
+    ```powershell
+    git clone --depth 1 --no-checkout https://github.com/microsoftlearning/AZ-203-DevelopingSolutionsForMicrosoftAzure .
+    ```
+
+1.  Within the command prompt, enter the following command and press **Enter** to check out the lab files necessary to complete the **AZ-203T04** lab:
+
+    ```powershell
+    git checkout master -- Allfiles/*
+    ```
+
+1.  Close the currently running **Windows PowerShell** command prompt application.
+
+### Exercise 1: Create Azure resources
+
+#### Task 1: Open the Azure portal
+
+1.  Sign in to the **Azure Portal** (<https://portal.azure.com>).
+
+1.  If this is your first time signing in to the Azure portal, you will see a dialog box offering a tour of the portal. Click **Get Started** to skip the tour.
+
+#### Task 2: Create an Azure Storage account
+
+1.  Create a new **storage account** with the following details:
+    
+      - **New resource group**: SecureFunction
+    
+      - **Name**: securestor\[your name in lowercase\]
+    
+      - **Location**: East US
+    
+      - **Performance**: Standard
+    
+      - **Account kind**: StorageV2 (general purpose v2)
+    
+      - **Replication**: Locally redundant storage (LRS)
+    
+      - **Access tier**: Hot
+
+> **Note**: Wait for Azure to finish creating the storage account before you move forward with the lab. You will receive a notification when the account is created.
+
+1.  Open the **Access Keys** blade of your newly created **storage account** instance.
+
+1.  Record the value in the **Connection string** field. You will use this value later in this lab.
+
+#### Task 3: Create an Azure Key Vault
+
+1. Create a new **Key Vault** with the following details:
+
+    - **Existing resource group**: SecureFunction
+
+    - **Name**: securevault\[your name in lowercase\]
+
+    - **Region**: East US
+
+    - **Pricing tier**: Standard
+
+    > **Note**: Wait for Azure to finish creating the Key Vault before you move forward with the lab. You will receive a notification when the vault is created.
+
+#### Task 4: Create an Azure Functions app
+
+1. Create a new **function app** with the following details:
+
+    - **Existing resource group**: SecureFunction
+
+    - **App name**: securefunc\[your name in lowercase\]
+
+    - **Publish**: Code
+
+    - **Runtime Stack**: .NET Core
+
+    - **Region**: East US
+
+    - **Storage account**: securestor\[your name in lowercase here\]
+
+    - **Operating System**: Windows
+
+    - **Plan**: Consumption
+
+    - **Enable Application Insights**: No
+
+        > **Note**: Wait for Azure to finish creating the function app before you move forward with the lab. You will receive a notification when the app is created.
+
+#### Review
+
+In this exercise, you created all the resources that you will use for this lab.
+
+### Exercise 2: Configure secrets and identities 
+
+#### Task 1: Configure a system-assigned managed service identity
+
+1.  Access the **securefunc\*** function app that you created earlier in this lab.
+
+1.  Navigate to the **Identity** settings located in the **Platform features** tab.
+
+1.  Enable the **system-assigned** managed identity and save your changes.
+
+#### Task 2: Create a Key Vault secret
+
+1.  Access the **securevault\*** Key Vault that you created earlier in this lab.
+
+1.  Navigate to the **Secrets** link located in the **Settings** section.
+
+1.  Create a new **secret** with the following settings:
+    
+    - **Name**: storagecredentials
+
+    - **Value**: \<Storage Connection String\>
+
+    - **Enabled**: Yes
+
+        > **Note**: Use the storage account **connection string** that you recorded earlier in this lab for the **value** of this secret.
+
+1.  Click through the secret to view the metadata for its latest version.
+
+1.  Record the value of the **Secret Identifier** field because you will use this later in the lab.
+
+#### Task 3: Configure a Key Vault access policy
+
+1.  Access the **securevault\*** Key Vault that you created earlier in this lab.
+
+1.  Navigate to the **Access Policies** link located in the **Settings** section.
+
+1.  Create a new **access policy** with the following settings:
+    
+    - **Principal**: securefunc\[your name in lowercase\]
+
+    - **Key permissions**: none
+
+    - **Secret permissions**: GET
+
+    - **Certificate permissions**: none
+
+    - **Authorized application**: none
+
+1.  **Save** your changes to the list of **Access Policies**.
+
+#### Review
+
+In this exercise, you created a server-assigned managed service identity for your function app and then gave that identity the appropriate permissions to get the value of a secret in your Key Vault. Finally, you created a secret that you will use within your function app.
+
+### Exercise 3: Write function app code 
+
+#### Task 1: Create a Key Vault-derived application setting 
+
+1.  Access the **securefunc\*** *Function App* that you created earlier in this lab.
+
+1.  Navigate to the **Configuration** settings located in the **Platform features** tab.
+
+1.  Create a new **application setting** by using the following details:
+    
+    - **Name**: StorageConnectionString
+
+    - **Value**: @Microsoft.KeyVault(SecretUri=\<Secret Identifier\>)
+    
+    - **deployment slot setting**: Not selected
+
+        > **Note**: You will need to build a reference to your **Secret Identifier** by using the above syntax. For example, if your Secret Identifier is **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf**, then your value would be **@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**
+
+1.  Save your changes to the **Application settings**.
+
+#### Task 2: Create a HTTP-triggered function
+
+1.  Access the **securefunc\*** function app that you created earlier in this lab.
+
+1.  Create a new **function** by using the following settings:
+    
+    - **Development Environment**: In-portal
+
+    - **Template**: HTTP trigger
+
+    - **Name**: FileParser
+
+    - **Authorization level**: Anonymous
+
+1.  In the function editor, replace the example function script with the following placeholder C\# code:
+
+    ```cs
+    using System.Net;
+    using Microsoft.AspNetCore.Mvc;
+    
+    public static async Task<IActionResult> Run(HttpRequest req)
+    {
+        return new OkObjectResult("Test Successful"); 
+    }
+    ```
+
+1.  Click **Save and run** to perform a test execution of the function. The output from the execution should be **Test Successful**.
+
+#### Task 3: Test the Key Vault-derived application setting
+
+1.  Delete all the existing code within the **Run** method.
+
+1.  Get the value of the **StorageConnectionString** application setting by using the **Environment.GetEnvironmentVariable** method:
+
+    ```cs
+    string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString");
+    ```
+
+1.  Return the value of the **connectionString** variable by using the **OkObjectResult** class constructor:
+
+    ```cs
+    return new OkObjectResult(connectionString);
+    ```
+
+1.  Click **Save and run** to perform a test execution of the function. The output from the execution should be your **storage account** connection string stored in **Azure Key Vault**.
+
+#### Review
+
+In this exercise, you securely used a service identity to read the value of a secret stored in **Azure Key Vault** and return that value as the result of an **Azure Function**.
+
+### Exercise 4: Access Storage Account blobs
+
+#### Task 1: Upload a sample Storage blob
+
+1.  Access the **securestor\*** storage account that you created earlier in this lab.
+
+1.  Navigate to the **Containers** link located in the **Blob service** section.
+
+1.  Create a new **container** with the following settings:
+    
+      - **Name**: drop
+    
+      - **Public access level**: Blob (anonymous read access for blobs only)
+
+1.  Navigate to the new **drop** container.
+
+1.  Click **Upload** to upload the **records.json** file located in the **Allfiles (F): \\Allfiles\\Labs\\04\\Starter** folder on your lab machine.
+
+    > **Note:** We recommend that you enable the **Overwrite if files already exist** option.
+
+1.  View the metadata for the **records.json** blob by clicking on the blob entry in the list of blobs.
+
+1.  Using a new browser tab, navigate to the **URL** for the blob and view the blob’s contents.
+
+1.  Update the container’s **access level** by changing the **Public access level** to **Private (no anonymous access)**.
+
+1.  Using a new browser window or tab, navigate to the **URL** for the blob and view the blob’s contents. You should now see an error message indicating that the resource was not found.
+
+    > **Note**: If you do not see the error message, your browser might have cached the file. Use **Ctrl+F5** to refresh the page until you see the error message.
+
+#### Task 2: Pull the Storage Account SDK from NuGet
+
+1.  Access the **securefunc\*** function app that you created earlier in this lab.
+
+1.  Open the editor for the **FileParser** function.
+
+1.  Using the **View files** tab, create a new **function.proj** file with the following content:
+
+    ```xml
+    <Project Sdk="Microsoft.NET.Sdk">
+        <PropertyGroup>
+            <TargetFramework>netstandard2.0</TargetFramework>
+        </PropertyGroup>
+        <ItemGroup>
+            <PackageReference Include="Azure.Storage.Blobs" Version="12.0.0" />
+        </ItemGroup>
+    </Project>
+    ```
+
+1.  **Save** the newly created **function.proj** file.
+
+    > **Note**: This **.proj** file contains the NuGet package reference necessary to import the [Azure.Storage.Blobs](https://www.nuget.org/packages/Azure.Storage.Blobs/12.0.0) package.
+
+1.  View the contents of the **function.proj** file by clicking the file in the **View files** tab.
+
+1.  Return to the editor for the **FileParser** function by clicking the **run.csx** file in the **View files** tab.
+
+1.  Add two **using** directives for the **Azure.Storage**, **Azure.Storage.Blobs** and the **Azure.Storage.Blobs.Models** namespaces.
+
+1.  Delete all the existing code within the **Run** method.
+
+#### Task 3: Write Storage Account code
+
+1.  Get the value of the **StorageConnectionString** application setting by using the **Environment.GetEnvironmentVariable** method:
+
+    ```cs
+    string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString");
+    ```
+
+1.  Create a new instance of the **BlobServiceClient** class by by passing in your *connectionString* variable to the constructor:
+
+    ```cs
+    BlobServiceClient serviceClient = new BlobServiceClient(connectionString);
+    ```
+
+1.  Use the **BlobServiceClient.GetBlobContainerClient** method while passing in the **drop** container name to create a new instance of the **BlobContainerClient** class that references the container that you created earlier in this lab:
+
+    ```cs
+    BlobContainerClient containerClient = serviceClient.GetBlobContainerClient("drop");
+    ```
+
+1.  Use the **BlobContainerClient.GetBlobClient** method while passing in the **records.json** blob name to create a new instance of the **BlobClient** class that references the blob that you uploaded earlier in this lab:
+
+    ```cs
+    BlobClient blobClient = containerClient.GetBlobClient("records.json");
+    ```
+
+#### Task 4: Download a blob
+
+1.  Use the **BlobClient.DownloadAsync** method to download the contents of the referenced blob asynchronously and store the result in a variable named *response*:
+
+    ```cs
+    var response = await blobClient.DownloadAsync();
+    ```
+
+1.  Return the value of the various content stored in the *content* variable by using the **FileStreamResult** class constructor:
+
+    ```cs
+    return new FileStreamResult(response?.Value?.Content, response?.Value?.ContentType);
+    ```
+
+1.  Click **Save and run** to perform a test execution of the function. The output from the execution should be the content of the **$/drop/records.json** blob stored in your Storage Account.
+
+#### Review
+
+In this exercise, you used C\# code to access a Storage Account securely and then download the contents of a blob.
+
+### Exercise 5: Clean up subscription 
+
+#### Task 1: Open Azure Cloud Shell and list resource groups
+
+1.  At the top of the portal, click the **Cloud Shell** icon to open a new shell instance.
+
+1.  If the **Cloud Shell** is not already configured, configure the shell for Bash by using the default settings.
+
+1.  In the **Cloud Shell** command prompt at the bottom of the portal, type the following command and press Enter to list all resource groups in the subscription:
+
+    ```bash
+    az group list
+    ```
+
+1.  Type the following command and press Enter to view a list of possible commands to delete a resource group:
+
+    ```bash
+    az group delete --help
+    ```
+
+#### Task 2: Delete a resource group
+
+1.  Type the following command and press Enter to delete the **SecureFunction** resource group:
+
+    ```bash
+    az group delete --name SecureFunction --no-wait --yes
+    ```
+    
+1.  Close the **Cloud Shell** pane at the bottom of the portal.
+
+#### Task 3: Close active application
+
+> Close the currently running **Microsoft Edge** application.
+
+#### Review
+
+In this exercise, you cleaned up your subscription by removing the **resource groups** used in this lab.

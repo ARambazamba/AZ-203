@@ -1,0 +1,10 @@
+grp=az-203-us-$RANDOM
+loc=westus
+acct=az203cosmos-tblstorage-$RANDOM
+tbl=customer
+
+az group create -n $grp -l $loc
+
+az cosmosdb create -n $acct -g az-203
+
+az cosmosdb table create --account-name $acct -n $tbl -g $grp

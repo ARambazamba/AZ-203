@@ -1,0 +1,9 @@
+grp=az-203
+loc=westeurope
+srvName=az-search-$RANDOM
+
+
+# create service
+
+az search service create -n $srvName -g $grp --sku B
+

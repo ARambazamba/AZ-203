@@ -1,0 +1,17 @@
+grp=$grp
+loc=westeurope
+srv=myserver$RANDOM
+db=mydb
+# acct=az203storageacct-$RANDOM
+
+# Create server:
+
+az sql server create -l $loc -g $grp -n $srv -u myadminuser -p myadminpassword
+
+# Create database:
+
+az sql db create -g $grp -s $srv -n myDB --service-objective S0
+
+# List Editions:
+
+az sql db list-editions -l $loc -o table

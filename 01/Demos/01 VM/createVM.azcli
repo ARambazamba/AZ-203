@@ -1,0 +1,17 @@
+# Create an Ubuntu VM
+# Make sure you have installed the following Extension https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli
+# Use Ctrl + ä to execute the current line
+
+az login
+
+az account show -o table
+
+az vm list 
+az vm list --query "[].name"
+az vm list --query "[?location=='westeurope'].name"
+
+az group create --location "westeurope" --name "vmrg"
+
+az vm create --name linuxvm --resource-group  vmrg --image UbuntuLTS --generate-ssh-keys --admin-username demoadmin
+
+

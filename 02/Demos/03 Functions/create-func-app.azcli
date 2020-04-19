@@ -1,0 +1,18 @@
+grp=az-203
+loc=westeurope
+appName=az203-fx-$RANDOM
+storage=az203fx$RANDOM
+
+az group create --name $grp --location $loc
+
+az storage account  create -n $storage -g $grp --s
+
+az functionapp create -n $appName -g $grp --storage-account $storage --consumption-plan-location $loc --runtime dotnet --functions-version 2
+
+echo "Funtions app created: $appName"
+
+az functionapp list
+
+# Set Application Settings
+
+az functionapp config appsettings set -n $appName -g $grp --settings "MyImportantSetting=abc"

@@ -1,0 +1,1 @@
+az storage account create --name queuelab -g learn-df4f6803-a9dc-4327-bf70-9a2aca58b2d1 --kind StorageV2 --sku Standard_LRS

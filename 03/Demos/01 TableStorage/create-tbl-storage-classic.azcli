@@ -1,0 +1,16 @@
+grp=storageAcct$RANDOM
+loc=westeurope
+acct=az203storageacct-$RANDOM
+
+az group create -n $grp -l $loc
+
+az storage account create -l $loc -n $acct -g $grp --sku Standard_LRS
+
+# just there to show you result of list statement
+az storage account keys list -n $acct
+
+key=$(az storage account keys list -n $acct --query "[0].[value][0]")
+
+echo "key: $key"
+
+az storage table create -n vouchers --account-key $key --account-name $acct

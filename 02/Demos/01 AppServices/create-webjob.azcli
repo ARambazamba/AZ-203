@@ -1,0 +1,24 @@
+grp=az-203
+appPlan=appPlan$RANDOM
+strgAcct=az204jobs$RANDOM
+webjob=az203webjob$RAMDOM
+
+az group create -n $grp --location westeurope
+
+az appservice plan create -n $appPlan --resource-group $grp --sku B1
+
+az webapp create -n $webjob -g $grp --plan $appPlan
+
+# az monitor activity-log list 
+
+az storage account create -n $strgAcct -g $grp
+
+conStr=$(az storage account show-connection-string --name $strgAcct --query connectionString -o tsv)
+
+echo $conStr
+
+az webapp config set -n $webjob -g $grp --always-on true
+
+az webapp config connection-string set --id $id --connection-string-type Custom --settings StorageAccount=$conStr
+
+# Continue here: http://anuverma-crm.blogspot.com/2018/11/part-1-introduction-and-deployment-of.html

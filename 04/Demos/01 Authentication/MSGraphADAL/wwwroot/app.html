@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="voucherApp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Using Graph</title>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/adal-angular/dist/adal.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Using Microsoft Graph</h1>
+        <a href="#" onclick="signOut()">Sign Out</a>
+        <a href="#" onclick="doRead()">Read Graph</a>
+        <a href="#" onclick="createEvent()">Create Event</a>
+        <p id="pResult" style="display: none">
+            <h2>OneDrive documents</h2>
+            <ul id="OneDrive"></ul>
+            <h2>Events</h2>
+            <ul id="Events"></ul>
+            <h2>Contacts</h2>
+            <ul id="Contacts"></ul>
+            <h2>SharePoint documents</h2>
+            <ul id="SharePoint"></ul>
+        </p>
+    </div>
+</body>
+
+</html>

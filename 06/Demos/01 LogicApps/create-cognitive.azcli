@@ -1,0 +1,18 @@
+grp=az-203
+loc=westeurope
+kind=TextAnalytics
+acctName=sentiments$RANDOM
+
+az cognitiveservices account list-skus --kind $kind --location $loc -o table
+
+az group create --n $grp --location $loc
+
+az cognitiveservices account create -n $acctName -g $grp --kind $kind --sku F0 --location $loc --yes
+
+key=$(az cognitiveservices account keys list -n $acctName -g $grp --query key1)
+
+echo "Key for service to use in lab: $key" 
+
+# Cleanup after the Demo
+
+az cognitiveservices account delete -n $acctName -g $grp

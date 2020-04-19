@@ -1,0 +1,11 @@
+grp=az-203
+loc=westeurope
+vault=az-203-vault-$RANDOM
+
+az keyvault create -l $loc -n $vault -g $grp --enabled-for-disk-encryption true --sku standard
+
+az keyvault key list --vault-name $vault
+
+az keyvault secret set --vault-name $vault --name "ExamplePassword" --value "hVFkk965BuUv"
+
+az keyvault secret show --name "ExamplePassword" --vault-name $vault

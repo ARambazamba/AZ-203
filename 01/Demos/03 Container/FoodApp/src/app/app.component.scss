@@ -1,0 +1,20 @@
+.navbar {
+  background-color: lightblue;
+  height: 10vh;
+}
+
+.sidebar {
+  background-color: darkgrey;
+  min-width: 200px;
+}
+
+.main {
+  width: 80vw;
+  margin: 0 2rem;
+}
+
+.mainrow {
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+}

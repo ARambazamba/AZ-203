@@ -1,0 +1,12 @@
+# Get the object for an Azure AD user
+
+az ad user show --id "alexander.pajer@integrations.at" 
+
+# Get a group
+
+az ad group member list --group AZAdmins 
+az ad group member list --group AZAdmins --query [].{Name:displayName}  -o table
+
+# List all applications
+
+az ad sp list --query [].{Name:displayName}  -o table

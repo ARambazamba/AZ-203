@@ -1,0 +1,16 @@
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\obj\Debug\netcoreapp3.1\BlobStorageConsole.csprojAssemblyReference.cache
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\obj\Debug\netcoreapp3.1\BlobStorageConsole.AssemblyInfoInputs.cache
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\obj\Debug\netcoreapp3.1\BlobStorageConsole.AssemblyInfo.cs
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\BlobStorageConsole.exe
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\BlobStorageConsole.deps.json
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\BlobStorageConsole.runtimeconfig.json
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\BlobStorageConsole.runtimeconfig.dev.json
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\BlobStorageConsole.dll
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\BlobStorageConsole.pdb
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\Azure.Core.dll
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\Azure.Storage.Common.dll
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\obj\Debug\netcoreapp3.1\BlobStorageConsole.csproj.CopyComplete
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\obj\Debug\netcoreapp3.1\BlobStorageConsole.dll
+H:\Classes\AZ-203\Demos\03\04 BlobStorage\BlobStorageConsole\obj\Debug\netcoreapp3.1\BlobStorageConsole.pdb

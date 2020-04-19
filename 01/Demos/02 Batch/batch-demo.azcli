@@ -1,0 +1,101 @@
+# Create environment variables for your resource group and batch resource
+# Make sure you have installed the following Extension https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli
+# Use Ctrl + ä to execute the current line
+
+# List Subscriptions
+
+az account list --query '[].[name,id]'
+
+az account list-locations --query [].name
+
+# Dont forget to reset Subscription Afterwards!!!!
+az account set -s "Dev/Test Pay-As-You-Go"
+
+az provider list --query '[].namespace'
+
+az provider register --namespace 
+
+# Batch Demos Vars
+
+grp="az203-batch$RANDOM"
+acct=batchaccount$RANDOM
+loc="eastus"
+
+# Create Resource Group
+
+az group create -n $grp -l $loc
+
+# Create batch account
+
+az batch account create -n $acct -g $grp -l $loc
+
+# Sign in to your Azure Batch account:
+
+az batch account login -n $acct -g $grp --shared-key-auth
+
+# Create a pool
+
+az batch pool create --id mypool --vm-size Standard_A1_v2 --target-dedicated-nodes 3 --image canonical:ubuntuserver:16.04-LTS --node-agent-sku-id "batch.node.ubuntu 16.04"
+
+# Check allocation state
+
+az batch pool show --pool-id mypool --query "allocationState"
+
+# Crate batch job
+
+az batch job create --id myjob --pool-id mypool
+
+# Create Batch tasks:
+
+for i in {1..10}
+do
+   az batch task create --task-id mytask$i --job-id myjob --command-line "/bin/bash -c 'echo \$(printenv | grep \AZ_BATCH_TASK_ID) processed by; echo \$(printenv | grep \AZ_BATCH_NODE_ID)'"
+done
+
+# Delete Job
+
+az batch job delete --job-id myjob -y
+
+## Monitor Job
+
+# Create a new Batch job
+
+az batch job create --id myjob2 --pool-id mypool
+
+for i in {1..10}
+do
+   az batch task create --task-id mytask$i --job-id myjob2 --command-line "/bin/bash -c 'echo \$(printenv | grep \AZ_BATCH_TASK_ID) processed by; echo \$(printenv | grep \AZ_BATCH_NODE_ID)'"
+done
+
+# Check Status:
+
+az batch task show --job-id myjob2 --task-id mytask1
+
+# Download output using CLI
+
+az batch task file list --job-id myjob2 --task-id mytask5 --output table
+
+mkdir taskoutputs && cd taskoutputs
+
+for i in {1..10}
+do
+    az batch task file download --job-id myjob2 --task-id mytask$i --file-path stdout.txt --destination ./stdout$i.txt
+done
+
+cat stdout1.txt && cat stdout2.txt
+
+az batch job delete --job-id myjob2 -y 
+
+
+# Using Batch Explorer
+
+az batch job create --id explorerjob --pool-id mypool
+
+for i in {1..100}
+do
+    az batch task create --task-id mytask\$i --job-id explorerjob --command-line "/bin/bash -c 'printenv; sleep 5s'"
+done
+
+# Reset Default Subscription
+
+az account set -s "Visual Studio Enterprise"
