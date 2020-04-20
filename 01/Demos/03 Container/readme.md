@@ -1,46 +1,8 @@
 # Module 3 Create containerized solutions
 
-### AKS
-
-[az aks Commands Overview](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest)
-
-[DevSpaces Intro](https://docs.microsoft.com/en-us/azure/dev-spaces/quickstart-team-development)
-
-#### Create AKS Cluster
-
-Install kubectl command line client locally:
-
-`az aks install-cli`
-
-> Note: You might need to set a path to your system env variables
-
-Create resource group:
-
-`az group create --name az-203 --location westeurope`
-
-Create AKS cluster:
-
-`az aks create --resource-group az-203 --name foodcluster --node-count 1 --enable-addons monitoring --generate-ssh-keys`
-
-Get credentials for the Kubernets cluster:
-
-`az aks get-credentials --resource-group az-203 --name foodcluster`
-
-Get a list of cluster nodes:
-
-`kubectl get nodes`
-
-Apply the yaml
-
-`kubectl apply -f foodui.yaml`
-
-Get the serive IP and use it on the assigned port
-
-kubectl get service foodui --watch
-
 #### Create Image & Deploy to Dockerhub / Azure
 
-Create Image
+Create Image `FoodUI` or `FoodApi`
 
 `docker build --rm -f "app.prod.dockerfile" -t foodui .`
 
@@ -81,6 +43,44 @@ List existing containers:
 Create container:
 
 `az container create -g az-203 -l westeurope -n foodui --image arambazamba/foodui:1.1.1 --cpu 1 --memory 1 --dns-name-label integrations --port 80`
+
+### AKS
+
+[az aks Commands Overview](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest)
+
+[DevSpaces Intro](https://docs.microsoft.com/en-us/azure/dev-spaces/quickstart-team-development)
+
+#### Create AKS Cluster
+
+Install kubectl command line client locally:
+
+`az aks install-cli`
+
+> Note: You might need to set a path to your system env variables
+
+Create resource group:
+
+`az group create --name az-203 --location westeurope`
+
+Create AKS cluster:
+
+`az aks create --resource-group az-203 --name foodcluster --node-count 1 --enable-addons monitoring --generate-ssh-keys`
+
+Get credentials for the Kubernets cluster:
+
+`az aks get-credentials --resource-group az-203 --name foodcluster`
+
+Get a list of cluster nodes:
+
+`kubectl get nodes`
+
+Apply the yaml
+
+`kubectl apply -f foodui.yaml`
+
+Get the serive IP and use it on the assigned port
+
+kubectl get service foodui --watch
 
 ### Helm
 
