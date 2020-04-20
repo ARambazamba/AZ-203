@@ -1,4 +1,5 @@
-random=$RANDOM
+# random=$RANDOM
+random="7007"
 loc=westeurope
 grp=webjob-$random
 appPlan=webjob-$random
@@ -13,6 +14,12 @@ az webapp create -n $webjob -g $grp --plan $appPlan
 
 az storage account create -n $strgAcct -g $grp -l loc
 
+key=$(az storage account keys list -n $strgAcct --query "[0].[value][0]")
+
+echo "Storage Acct Key: $key"
+
+az storage container create -n webjob --account-name $strgAcct --account-key $key
+
 conStr=$(az storage account show-connection-string --name $strgAcct --query connectionString -o tsv)
 
 echo "Connection String: $conStr"
@@ -21,4 +28,4 @@ az webapp config set -n $webjob -g $grp --always-on true
 
 az webapp config connection-string set -g $grp -n $webjob --connection-string-type Custom --settings StorageAccount=$conStr
 
-# Continue here: http://anuverma-crm.blogspot.com/2018/11/part-1-introduction-and-deployment-of.html
+

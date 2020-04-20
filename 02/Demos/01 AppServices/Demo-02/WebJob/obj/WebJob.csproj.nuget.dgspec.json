@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-02\\WebJob\\WebJob.csproj": {}
+  },
+  "projects": {
+    "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-02\\WebJob\\WebJob.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-02\\WebJob\\WebJob.csproj",
+        "projectName": "WebJob",
+        "projectPath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-02\\WebJob\\WebJob.csproj",
+        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
+        "outputPath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-02\\WebJob\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
