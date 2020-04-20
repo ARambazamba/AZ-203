@@ -1,6 +1,5 @@
 grp=az-203
 appPlan=appPlan$RANDOM
-# appPlan=appPlan9574
 web=food-api-$RANDOM
 
 # create a resource group
