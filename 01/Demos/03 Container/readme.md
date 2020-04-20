@@ -1,4 +1,10 @@
-# Module 3 Create containerized solutions
+# Create containerized solutions
+
+[Docker](https://www.docker.com/products/docker-desktop)
+
+[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)
+
+[Kubernetes](https://kubernetes.io/de/)
 
 #### Create Image & Deploy to Dockerhub / Azure
 

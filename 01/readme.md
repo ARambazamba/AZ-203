@@ -35,7 +35,7 @@ az extension add --name <extension-name>
 
 [Azure Batch](https://docs.microsoft.com/en-us/azure/batch/)
 
-## Contaienr
+## Container
 
 [Azure Container Instances](https://docs.microsoft.com/en-us/azure/container-instances/)
 

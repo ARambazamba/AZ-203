@@ -1,10 +1,6 @@
 # Implement solutions that use virtual machines
 
-## Creating VMs
-
----
-
-### Azure CLI
+## Azure CLI
 
 [Azure CLI Reference](https://docs.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest)
 
@@ -36,6 +32,8 @@ List available extensions:
 az extension list-available --output table
 az extension add --name <extension-name>
 ```
+
+## Creating VMs
 
 Create a Ubuntu VM
 

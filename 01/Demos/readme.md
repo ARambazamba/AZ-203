@@ -1,0 +1,3 @@
+- Implement solutions that use virtual machines
+- Implement batch jobs by using Azure Batch Services
+- Create containerized solutions
