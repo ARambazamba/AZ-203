@@ -26,6 +26,5 @@ echo "Connection String: $conStr"
 
 az webapp config set -n $webjob -g $grp --always-on true
 
-az webapp config connection-string set -g $grp -n $webjob --connection-string-type Custom --settings StorageAccount=$conStr
-
+az webapp config appsettings set -g $grp -n $webjob --settings AZURE_STORAGE_CONNECTION_STRING=$conStr 
 
