@@ -119,7 +119,9 @@ az vm encryption enable -g az-203 -n winVM --disk-encryption-keyvault az203vault
 
 Running templates from the command line:
 
-az deployment group create -g az-400 --template-file azuredeploy.json --parameters storageAcctName="az400teststorageaccount"
+az group create -n az-400
+
+az deployment group create -g az-400 --template-file azuredeploy.json --parameters storageAcctName=""
 
 > Note: Change to the according folder
 

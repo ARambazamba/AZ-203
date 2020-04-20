@@ -4,6 +4,7 @@
 
 # List Subscriptions
 
+az account list
 az account list --query '[].[name,id]'
 
 az account list-locations --query [].name
@@ -20,7 +21,7 @@ az provider register --namespace
 grp="az203-batch$RANDOM"
 acct=batchaccount$RANDOM
 loc="eastus"
-
+ 
 # Create Resource Group
 
 az group create -n $grp -l $loc
@@ -55,6 +56,7 @@ done
 # Delete Job
 
 az batch job delete --job-id myjob -y
+
 
 ## Monitor Job
 

@@ -14,7 +14,7 @@ Create environment variables for your resource group and batch resource
 
 ```bash
 RESOURCE_GROUP="az203-batch"
-BATCH_ACCOUNT=batchaccount$RANDOM
+BATCH_ACCOUNT=batchaccount-$RANDOM
 ```
 
 Create Resource Group

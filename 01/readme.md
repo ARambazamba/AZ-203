@@ -27,12 +27,12 @@ az extension list-available --output table
 az extension add --name <extension-name>
 ```
 
-# Helm
+## Virtual Machines
 
-[Helm Docs](https://helm.sh/docs)
+[Azure Virtual Machines](https://docs.microsoft.com/en-us/azure/virtual-machines/)
 
-Installing Helm:
+## Azure Batch
 
-```
-choco install kubernetes-helm
-```
+[Azure Batch](https://docs.microsoft.com/en-us/azure/batch/)
+
+## Contaienr

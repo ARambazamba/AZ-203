@@ -6,12 +6,20 @@ az login
 
 az account show -o table
 
-az vm list 
+az vm list -o table
+
 az vm list --query "[].name"
+
 az vm list --query "[?location=='westeurope'].name"
 
 az group create --location "westeurope" --name "vmrg"
 
-az vm create --name linuxvm --resource-group  vmrg --image UbuntuLTS --generate-ssh-keys --admin-username demoadmin
+loc=eastus
+grp="vmgrp"
+vmname=mysupervm
+
+az group create -l $loc -n $grp
+
+az vm create -n linuxvm -g $grp --image UbuntuLTS --generate-ssh-keys --admin-username demoadmin
 
 

@@ -1,15 +1,5 @@
 # Module 3 Create containerized solutions
 
-## Virtual Machines
-
-[Azure Virtual Machines](https://docs.microsoft.com/en-us/azure/virtual-machines/)
-
-## Azure Batch
-
-[Azure Batch](https://docs.microsoft.com/en-us/azure/batch/)
-
-## Contaienr
-
 ### AKS
 
 [az aks Commands Overview](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest)
@@ -91,8 +81,6 @@ List existing containers:
 Create container:
 
 `az container create -g az-203 -l westeurope -n foodui --image arambazamba/foodui:1.1.1 --cpu 1 --memory 1 --dns-name-label integrations --port 80`
-
-### Virtual Kubelet
 
 ### Helm
 
