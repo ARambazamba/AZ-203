@@ -1,5 +1,9 @@
 # Develop Azure Infrastructure as a Service compute solutions
 
+## Markdown
+
+[Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
 ## Azure CLI
 
 [Azure CLI Documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
