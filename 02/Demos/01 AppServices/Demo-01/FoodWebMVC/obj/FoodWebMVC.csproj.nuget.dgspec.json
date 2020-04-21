@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\FoodWebMVC.csproj": {}
+    "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\FoodWebMVC.csproj": {}
   },
   "projects": {
-    "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\FoodWebMVC.csproj": {
+    "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\FoodWebMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\FoodWebMVC.csproj",
+        "projectUniqueName": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\FoodWebMVC.csproj",
         "projectName": "FoodWebMVC",
-        "projectPath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\FoodWebMVC.csproj",
+        "projectPath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\FoodWebMVC.csproj",
         "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-        "outputPath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\obj\\",
+        "outputPath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

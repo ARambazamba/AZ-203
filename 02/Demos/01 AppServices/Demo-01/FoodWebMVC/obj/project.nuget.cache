@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YkBP88V6fuQBedc2aUbK5Pl2qBar9th20WS9bv5+Fmcs4LUKTWDc25VyvV0hHKHRcU7dEh+YniF9dl5jxKQuag==",
+  "dgSpecHash": "0g4HksuIaC3I3TeYnYn0yI8LkUuDK6YeHCDeUO2zaC0hnqFrB6FKa1C/wEnD9ikmOIs0AkEfQcWQyQDgdK80bQ==",
   "success": true,
-  "projectFilePath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\FoodWebMVC.csproj",
+  "projectFilePath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\FoodWebMVC.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

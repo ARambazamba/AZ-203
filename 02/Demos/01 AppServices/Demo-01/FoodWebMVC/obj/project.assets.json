@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\FoodWebMVC.csproj",
+      "projectUniqueName": "h:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\FoodWebMVC.csproj",
       "projectName": "FoodWebMVC",
-      "projectPath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\FoodWebMVC.csproj",
+      "projectPath": "h:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\FoodWebMVC.csproj",
       "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-      "outputPath": "H:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\FoodWebMVC\\obj\\",
+      "outputPath": "h:\\Classes\\AZ-203\\02\\Demos\\01 AppServices\\Demo-01\\FoodWebMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
