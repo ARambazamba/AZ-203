@@ -109,6 +109,8 @@ chmod 700 get_helm.sh
 
 [Using Helm](https://helm.sh/docs/intro/using_helm/)
 
+[Helm CLI Reference](https://helm.sh/docs/helm/)
+
 Sample: https://github.com/Azure-Samples/helm-charts/tree/master/chart-source/azure-vote
 
 List Repos
