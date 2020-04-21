@@ -35,3 +35,6 @@ Apply the yaml
 Get the serive IP and use it on the assigned port
 
 kubectl get service foodui --watch
+
+# port taken from yaml
+# ie: http://51.124.79.235:8081
