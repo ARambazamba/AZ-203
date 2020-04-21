@@ -1,0 +1,16 @@
+# Create a Container Registry instance
+rnd=$RANDOM
+grp=az203-containers-rnd
+acr=az203-acr-rnd
+
+az acr create -g $grp --name $acr --sku Basic
+
+# Login to Container Registry & get loginServer
+
+az acr login --name $acr
+az acr list --query "[].loginServer" -o tsv
+
+# Tag img & upload to ACR
+
+az acr update --name $acr --admin-enabled true
+az acr credential show -n $acr --query "passwords[0].value"

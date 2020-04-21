@@ -1,0 +1,7 @@
+# List existing containers:
+
+az container list
+
+# Create container:
+
+az container create -g az-203 -l westeurope -n foodui --image arambazamba/foodui:1.1.1 --cpu 1 --memory 1 --dns-name-label integrations --port 80

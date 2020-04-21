@@ -20,35 +20,18 @@ Publish to Dockerhub
 
 `docker push arambazamba/foodui`
 
-Create a Container Registry instance
+Publish to ACR:
 
-`az acr create -g az-203 --name apcontainers --sku Basic`
+Execute `create-container-reg` and:
 
-Login to Container Registry & get loginServer
-
-```bash
-az acr login --name apcontainers
-az acr list --query "[].loginServer" -o tsv
 ```
-
-Tag img & upload to ACR
-
-```bash
-az acr update --name apcontainers --admin-enabled true
-az acr credential show -n apcontainers --query "passwords[0].value"
-docker tag foodui apcontainers.azurecr.io/foodui:1.1.0
-docker push apcontainers.azurecr.io/foodui:1.1.0
+docker tag foodui $acr.azurecr.io/foodui:1.1.0
+docker push $acr.azurecr.io/foodui:1.1.0
 ```
 
 ### Azure Container Instances
 
-List existing containers:
-
-`az container list`
-
-Create container:
-
-`az container create -g az-203 -l westeurope -n foodui --image arambazamba/foodui:1.1.1 --cpu 1 --memory 1 --dns-name-label integrations --port 80`
+Execute `create-container-instance.azcli`
 
 ### AKS
 
