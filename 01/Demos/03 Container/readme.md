@@ -25,13 +25,29 @@ Publish to ACR:
 Execute `create-container-reg` and:
 
 ```
-docker tag foodui $acr.azurecr.io/foodui:1.1.0
-docker push $acr.azurecr.io/foodui:1.1.0
+docker tag foodui acr.azurecr.io/foodui:1.1.0
+docker push acr.azurecr.io/foodui:1.1.0
 ```
 
 ### Azure Container Instances
 
 Execute `create-container-instance.azcli`
+
+### Web App for Container
+
+Go to Food UI:
+
+Build Image
+
+```
+docker build --rm -f "app.prod.dockerfile" -t foodui .
+```
+
+Run Image
+
+```
+docker run -p 8080:80 foodui
+```
 
 ### AKS
 
