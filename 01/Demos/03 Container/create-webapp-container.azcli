@@ -1,6 +1,9 @@
-grp=az-203
-appPlan=az203container$RANDOM
+rnd=$RANDOM
+grp=az-203-$rnd
+appPlan=wacontainer$rnd
 
-az appservice plan create --name $appPlan -g $grp --sku B1
+echo $appPlan
+
+az appservice plan create --name $appPlan -g $grp --sku B2
 
 az webapp create -g $grp -p $appPlan -n az203-foodui -i arambazamba/foodui
