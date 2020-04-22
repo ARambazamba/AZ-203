@@ -1,5 +1,5 @@
 location="East US"
-randomIdentifier=random123
+randomIdentifier=random1234
 resource="resource-$randomIdentifier"
 server="server-$randomIdentifier"
 database="database-$randomIdentifier"
@@ -10,9 +10,9 @@ az group create --name $resource --location "$location"
 
 az sql server create --name $server --resource-group $resource --location "$location" --admin-user $login --admin-password $password
 
-az sql db create --resource-group $resource --server $server --name $database --edition GeneralPurpose --family Gen4 --capacity 1 
-
 az sql db list-usages --name $database --resource-group $resource --server $server
+
+az sql db create --resource-group $resource --server $server --name $database --edition GeneralPurpose --family Gen4 --capacity 1 
 
 # Scale Up
 az sql db create --resource-group $resource --server $server --name $database --edition GeneralPurpose --family Gen4 --capacity 2
