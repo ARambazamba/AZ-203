@@ -21,3 +21,9 @@
 [Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/overview)
 
 ## Develop message-based solutions
+
+[Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/)
+
+## Notification Hub
+
+[Notification Hub](https://docs.microsoft.com/en-us/azure/notification-hubs/)

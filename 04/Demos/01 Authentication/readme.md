@@ -6,6 +6,8 @@
 
 [MSAL](https://docs.microsoft.com/en-us/azure/active-directory/develop/reference-v2-libraries)
 
+[Postman Azure AD](https://docs.microsoft.com/en-us/azure/digital-twins/how-to-configure-postman)
+
 ### Managed Identity
 
 [Azure Managed Identites](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/)
