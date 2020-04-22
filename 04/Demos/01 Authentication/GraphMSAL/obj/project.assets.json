@@ -6335,11 +6335,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "h:\\Classes\\SPO365ClientDev\\06 Graph & Webhooks\\GraphMSAL\\GraphTutorial.csproj",
+      "projectUniqueName": "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\GraphMSAL\\GraphTutorial.csproj",
       "projectName": "GraphTutorial",
-      "projectPath": "h:\\Classes\\SPO365ClientDev\\06 Graph & Webhooks\\GraphMSAL\\GraphTutorial.csproj",
+      "projectPath": "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\GraphMSAL\\GraphTutorial.csproj",
       "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-      "outputPath": "h:\\Classes\\SPO365ClientDev\\06 Graph & Webhooks\\GraphMSAL\\obj\\",
+      "outputPath": "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\GraphMSAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6410,7 +6410,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

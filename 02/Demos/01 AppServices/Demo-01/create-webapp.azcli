@@ -7,7 +7,7 @@ web=food-web-$rnd
 az group create -l westeurope -n $grp
 
 # create an App Service plan
-az appservice plan create -n $appPlan -g $grp --sku FREE
+az appservice plan create -n $appPlan -g $grp --sku B2
 
 # create a Web App
 az webapp create -n $web -g $grp --plan $appPlan

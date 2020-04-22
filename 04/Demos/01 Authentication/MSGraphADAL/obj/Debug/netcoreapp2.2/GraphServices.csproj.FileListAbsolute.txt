@@ -28,3 +28,24 @@ G:\Classes\SPO365ClientDev\06 Graph & Webhooks\UsingMSGraph\src\GraphServices\ob
 G:\Classes\SPO365ClientDev\06 Graph & Webhooks\UsingMSGraph\src\GraphServices\obj\Debug\netcoreapp2.2\GraphServices.RazorTargetAssemblyInfo.cache
 G:\Classes\SPO365ClientDev\06 Graph & Webhooks\UsingMSGraph\src\GraphServices\obj\Debug\netcoreapp2.2\GraphServices.dll
 G:\Classes\SPO365ClientDev\06 Graph & Webhooks\UsingMSGraph\src\GraphServices\obj\Debug\netcoreapp2.2\GraphServices.pdb
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\app.config
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\web.config
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\appsettings.json
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\libman.json
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\GraphServices.dll.config
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\GraphServices.deps.json
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\GraphServices.runtimeconfig.json
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\GraphServices.runtimeconfig.dev.json
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\GraphServices.dll
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\bin\Debug\netcoreapp2.2\GraphServices.pdb
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.csprojAssemblyReference.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.csproj.CoreCompileInputs.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.RazorAssemblyInfo.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.RazorAssemblyInfo.cs
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.AssemblyInfoInputs.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.AssemblyInfo.cs
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.RazorTargetAssemblyInfo.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.dll
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.pdb
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSGraphADAL\obj\Debug\netcoreapp2.2\GraphServices.genruntimeconfig.cache

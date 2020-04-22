@@ -341,11 +341,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Classes\\AZ-203\\Demos\\03\\04 BlobStorage\\BlobStorageConsole\\BlobStorageConsole.csproj",
+      "projectUniqueName": "h:\\Classes\\AZ-203\\03\\Demos\\04 BlobStorage\\BlobStorageConsole\\BlobStorageConsole.csproj",
       "projectName": "BlobStorageConsole",
-      "projectPath": "H:\\Classes\\AZ-203\\Demos\\03\\04 BlobStorage\\BlobStorageConsole\\BlobStorageConsole.csproj",
+      "projectPath": "h:\\Classes\\AZ-203\\03\\Demos\\04 BlobStorage\\BlobStorageConsole\\BlobStorageConsole.csproj",
       "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-      "outputPath": "H:\\Classes\\AZ-203\\Demos\\03\\04 BlobStorage\\BlobStorageConsole\\obj\\",
+      "outputPath": "h:\\Classes\\AZ-203\\03\\Demos\\04 BlobStorage\\BlobStorageConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -395,7 +395,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

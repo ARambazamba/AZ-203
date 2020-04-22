@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5sI0eDMSEP9ugq7quajeq73KZ1ZE22ariSnFvk8HZPhGld62eMtotW4MFSSeaqsSQSg/aPnllIrGsuQjNI9zxQ==",
+  "dgSpecHash": "x5tzje3emZ0z/EVVnNLKsHgFj9EkfxaibjVYWMjcwzRJerB2pMfSoCq+sTRY/tbxcFQ6e9WbnIjxqgi0FwDj5g==",
   "success": true,
-  "projectFilePath": "H:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\CosmosReader\\CosmosReader\\CosmosReader.csproj",
+  "projectFilePath": "h:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\Demo-01\\CosmosReader\\CosmosReader\\CosmosReader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexander\\.nuget\\packages\\microsoft.azure.cosmos\\3.1.1\\microsoft.azure.cosmos.3.1.1.nupkg.sha512",
     "C:\\Users\\Alexander\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",

@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
+using CosmosTableSamples.Model;
+using Microsoft.Azure.Cosmos.Table;
 
 namespace CosmosTableSamples
 {
-    using System.Threading.Tasks;
-    using Microsoft.Azure.Cosmos.Table;
-    using Model;
+
     public class Samples
     {
         public static async Task Run(CloudTable table)

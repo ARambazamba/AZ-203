@@ -9942,11 +9942,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "h:\\Classes\\AngularSPADevelopment\\00 Voucherservice\\VouchersApi\\VouchersApi.csproj",
+      "projectUniqueName": "h:\\Classes\\AZ-203\\03\\Demos\\03 Relational\\VouchersApi\\VouchersApi.csproj",
       "projectName": "VouchersApi",
-      "projectPath": "h:\\Classes\\AngularSPADevelopment\\00 Voucherservice\\VouchersApi\\VouchersApi.csproj",
+      "projectPath": "h:\\Classes\\AZ-203\\03\\Demos\\03 Relational\\VouchersApi\\VouchersApi.csproj",
       "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-      "outputPath": "h:\\Classes\\AngularSPADevelopment\\00 Voucherservice\\VouchersApi\\obj\\",
+      "outputPath": "h:\\Classes\\AZ-203\\03\\Demos\\03 Relational\\VouchersApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

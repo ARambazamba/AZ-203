@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vUGRaVJpXR8S3mO7ADqIpHcwXCowxbs64ujjPug7tJxAFLjz14yG2ink7ur711vcZ0wiJ1f4J5i1rMKcUiDlSA==",
+  "dgSpecHash": "h8B8fxYHlEb2u0VH3HHzzhmUTzGojTLhulvU3SHrg6tWvWlGXk13F8yOfQ+MHOvsgbqjD03riJWs3OoWeDtg+g==",
   "success": true,
-  "projectFilePath": "h:\\Classes\\AngularSPADevelopment\\00 Voucherservice\\VouchersApi\\VouchersApi.csproj",
+  "projectFilePath": "H:\\Classes\\AZ-203\\03\\Demos\\03 Relational\\VouchersApi\\VouchersApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexander\\.nuget\\packages\\microsoft.applicationinsights\\2.13.1\\microsoft.applicationinsights.2.13.1.nupkg.sha512",
     "C:\\Users\\Alexander\\.nuget\\packages\\microsoft.applicationinsights.aspnetcore\\2.13.1\\microsoft.applicationinsights.aspnetcore.2.13.1.nupkg.sha512",

@@ -12,60 +12,70 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace FoodService {
-    public class Startup {
-        public Startup (IConfiguration configuration) {
+namespace FoodService
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices (IServiceCollection services) {
+        public void ConfigureServices(IServiceCollection services)
+        {
 
-            services.AddCors (options => {
-                options.AddPolicy ("allowAll",
+            services.AddCors(options =>
+            {
+                options.AddPolicy("allowAll",
                     builder => builder
-                    .AllowAnyOrigin ()
-                    .AllowAnyMethod ()
-                    .AllowAnyHeader ()
-                    .AllowCredentials ());
+                    .SetIsOriginAllowed(host => true)
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
             });
 
-            services.AddSwaggerGen (c => {
-                c.SwaggerDoc ("v1", new OpenApiInfo { Title = "Food API", Version = "v1" });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Food API", Version = "v1" });
             });
 
-            services.AddControllers ();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure (IApplicationBuilder app, IWebHostEnvironment env) {
-            if (env.IsDevelopment ()) {
-                app.UseDeveloperExceptionPage ();
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection ();
+            app.UseHttpsRedirection();
 
             //Swagger
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger ();
+            app.UseSwagger();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),specifying the Swagger JSON endpoint.
 
-            app.UseSwaggerUI (c => {
-                c.SwaggerEndpoint ("/swagger/v1/swagger.json", "Food API V1");
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Food API V1");
             });
 
-            app.UseCors ("allowAll");
+            app.UseCors("allowAll");
 
-            app.UseRouting ();
+            app.UseRouting();
 
-            app.UseAuthorization ();
+            app.UseAuthorization();
 
-            app.UseEndpoints (endpoints => {
-                endpoints.MapControllers ();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
             });
         }
     }

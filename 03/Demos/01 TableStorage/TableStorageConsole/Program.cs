@@ -25,7 +25,6 @@ namespace TableStorage
             CloudTable table = tableClient.GetTableReference("customers");
 
             table.CreateIfNotExists();
-            Console.ReadKey();
 
             Samples.Run(table).Wait();
         }

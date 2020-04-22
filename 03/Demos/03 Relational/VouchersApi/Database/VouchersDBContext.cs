@@ -9,8 +9,7 @@ namespace Vouchers {
     //dotnet ef migrations add MIGRATION-NAME
     //dotnet ef database update
 
-    public class VouchersDBContext : IdentityDbContext //Use DbContext if not using Identity
-    {
+    public class VouchersDBContext : DbContext {
         public VouchersDBContext (DbContextOptions<VouchersDBContext> options) : base (options) { }
 
         public DbSet<Voucher> Vouchers { get; set; }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\CosmosReader\\CosmosReader\\CosmosReader.csproj": {}
+    "h:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\Demo-01\\CosmosReader\\CosmosReader\\CosmosReader.csproj": {}
   },
   "projects": {
-    "H:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\CosmosReader\\CosmosReader\\CosmosReader.csproj": {
+    "h:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\Demo-01\\CosmosReader\\CosmosReader\\CosmosReader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\CosmosReader\\CosmosReader\\CosmosReader.csproj",
+        "projectUniqueName": "h:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\Demo-01\\CosmosReader\\CosmosReader\\CosmosReader.csproj",
         "projectName": "CosmosReader",
-        "projectPath": "H:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\CosmosReader\\CosmosReader\\CosmosReader.csproj",
+        "projectPath": "h:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\Demo-01\\CosmosReader\\CosmosReader\\CosmosReader.csproj",
         "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-        "outputPath": "H:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\CosmosReader\\CosmosReader\\obj\\",
+        "outputPath": "h:\\Classes\\AZ-203\\03\\Demos\\02 CosmosDB\\Demo-01\\CosmosReader\\CosmosReader\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
