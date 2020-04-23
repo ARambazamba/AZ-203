@@ -1,23 +1,24 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
-namespace MSALDaemon.Controllers
+namespace MSALDaemon
 {
     [Route("api/[controller]")]
     [ApiController]
     public class MailController : ControllerBase
     {
-        GraphCfg config;
-        public MailController(GraphCfg cfg)
+        AppConfig config { get; set; }
+        public MailController(IOptions<AppConfig> cfg)
         {
-            config = cfg;
+            config = (AppConfig)cfg.Value;
         }
 
         [HttpGet]
         public ActionResult SendMail()
         {
-            GraphHelper.Send("Hello World", "A msg from me", new[] { "alexander.pajer@sighthounds.at" }, config);
+            GraphHelper.Send("Hello World", "A msg from me", new[] { "alexander.pajer@sighthounds.at" }, config.GraphCfg);
             return Ok();
         }
 
