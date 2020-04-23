@@ -1,0 +1,5 @@
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSALDaemon\obj\Debug\netcoreapp3.1\MSALDaemon.csprojAssemblyReference.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSALDaemon\obj\Debug\netcoreapp3.1\MSALDaemon.csproj.CoreCompileInputs.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSALDaemon\obj\Debug\netcoreapp3.1\MSALDaemon.MvcApplicationPartsAssemblyInfo.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSALDaemon\obj\Debug\netcoreapp3.1\MSALDaemon.AssemblyInfoInputs.cache
+H:\Classes\AZ-203\04\Demos\01 Authentication\MSALDaemon\obj\Debug\netcoreapp3.1\MSALDaemon.AssemblyInfo.cs

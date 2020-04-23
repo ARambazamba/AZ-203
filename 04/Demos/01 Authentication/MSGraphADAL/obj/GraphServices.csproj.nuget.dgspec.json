@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj": {}
+    "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj": {}
   },
   "projects": {
-    "H:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj": {
+    "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj",
+        "projectUniqueName": "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj",
         "projectName": "GraphServices",
-        "projectPath": "H:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj",
+        "projectPath": "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj",
         "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-        "outputPath": "H:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\obj\\",
+        "outputPath": "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

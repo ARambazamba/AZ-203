@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/IMACcJJNAiE7YOibTg6JNyBT8+4ohL/i7JdV4ePNQEYY29002U+g/+GAnRnxYThY45iRZfFBJeHncjyftW0nA==",
+  "dgSpecHash": "Nj2DU+Cgj5MKp9PQyS3jZKXLISTVWa58Rm5USEzh5NwOJfLs6MsOvKY42RndsAZze+Y5QjFeCYgve8NZwZNhPg==",
   "success": true,
-  "projectFilePath": "H:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj",
+  "projectFilePath": "h:\\Classes\\AZ-203\\04\\Demos\\01 Authentication\\MSGraphADAL\\GraphServices.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
