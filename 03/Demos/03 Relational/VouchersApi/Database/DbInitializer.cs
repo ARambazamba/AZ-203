@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Vouchers
 {
-    public static class DbInitializer
+    public static class DBInitializer
     {
         public static void Initialize(VouchersDBContext context)
         {
@@ -11,7 +11,7 @@ namespace Vouchers
 
             if (context.BalanceAccounts.FirstOrDefault() == null)
             {
-                var a1 = new BalanceAccount { Name = "Depreciation", Expense = true, ActivatedOn = DateTime.Now.AddYears(-1)};
+                var a1 = new BalanceAccount { Name = "Depreciation", Expense = true, ActivatedOn = DateTime.Now.AddYears(-1) };
                 var a2 = new BalanceAccount { Name = "Car Maintenance", Expense = true, ActivatedOn = DateTime.Now.AddYears(-1) };
                 var a3 = new BalanceAccount { Name = "Development", Expense = false, ActivatedOn = DateTime.Now.AddYears(-1) };
                 var a4 = new BalanceAccount { Name = "Consulting", Expense = false, ActivatedOn = DateTime.Now.AddYears(-1) };
