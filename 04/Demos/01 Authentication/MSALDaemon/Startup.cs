@@ -13,16 +13,26 @@ namespace MSALDaemon
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly IWebHostEnvironment env;
+        private readonly IConfiguration config;
+
+        public Startup(IWebHostEnvironment environment, IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.env = environment;
+            this.config = configuration;
         }
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //Config
+            var cfgBuilder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json");
+            var configuration = cfgBuilder.Build();
+            services.Configure<AppConfig>(configuration);
+            services.AddSingleton(typeof(IConfigurationRoot), configuration);
             services.AddControllers();
-            services.AddSingleton<AILogger>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

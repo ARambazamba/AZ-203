@@ -8,18 +8,16 @@ namespace MSALDaemon.Controllers
     [ApiController]
     public class MailController : ControllerBase
     {
-        AILogger logger;
         GraphCfg config;
-        public MailController(AILogger Logger, GraphCfg cfg)
+        public MailController(GraphCfg cfg)
         {
-            logger = Logger;
+            config = cfg;
         }
 
-        [HttpGet("")]
+        [HttpGet]
         public ActionResult SendMail()
         {
-
-            GraphHelper.Send("Hello World", "A msg from me", new[] { "alexander.pajer@sighthounds.at" }, config, logger);
+            GraphHelper.Send("Hello World", "A msg from me", new[] { "alexander.pajer@sighthounds.at" }, config);
             return Ok();
         }
 

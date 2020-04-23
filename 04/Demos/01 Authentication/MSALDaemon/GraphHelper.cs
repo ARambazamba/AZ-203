@@ -13,32 +13,25 @@ namespace MSALDaemon
     public class GraphHelper
     {
 
-        private static void sendMail(GraphCfg gconfig, Message msg, string SenderAcct, AILogger logger)
+        private static void sendMail(GraphCfg gconfig, Message msg, string SenderAcct)
         {
-            try
-            {
-                IConfidentialClientApplication confidentialClientApplication = ConfidentialClientApplicationBuilder
-                    .Create(gconfig.clientId)
-                    .WithTenantId(gconfig.tenantId)
-                    .WithClientSecret(gconfig.clientSecret)
-                    .Build();
 
-                ClientCredentialProvider authProvider = new ClientCredentialProvider(confidentialClientApplication);
+            IConfidentialClientApplication confidentialClientApplication = ConfidentialClientApplicationBuilder
+                .Create(gconfig.clientId)
+                .WithTenantId(gconfig.tenantId)
+                .WithClientSecret(gconfig.clientSecret)
+                .Build();
 
-                GraphServiceClient graphClient = new GraphServiceClient(authProvider);
-                graphClient.Users[SenderAcct].SendMail(msg, false).Request().PostAsync();
-                List<QueryOption> options = new List<QueryOption> {
+            ClientCredentialProvider authProvider = new ClientCredentialProvider(confidentialClientApplication);
+
+            GraphServiceClient graphClient = new GraphServiceClient(authProvider);
+            graphClient.Users[SenderAcct].SendMail(msg, false).Request().PostAsync();
+            List<QueryOption> options = new List<QueryOption> {
                     new QueryOption ("$top", "1")
                 };
 
-                var graphResult = graphClient.Users.Request(options).GetAsync().Result;
-                var props = new Dictionary<string, string> { { "mail", msg.Body.ToString() } };
-                logger.LogEvent("mail-send", props);
-            }
-            catch (System.Exception ex)
-            {
-                logger.LogEvent("mail-send-error", ex);
-            }
+            var graphResult = graphClient.Users.Request(options).GetAsync().Result;
+
         }
 
         private static void AddReciepient(List<Recipient> toRecipientsList, string r)
@@ -55,7 +48,7 @@ namespace MSALDaemon
             toRecipientsList.Add(toRecipients);
         }
 
-        public static bool Send(string Subject, string Message, string[] Recipient, GraphCfg config, AILogger logger)
+        public static bool Send(string Subject, string Message, string[] Recipient, GraphCfg config)
         {
             var result = false;
 
@@ -81,7 +74,7 @@ namespace MSALDaemon
             };
 
             config.returnUrl = config.frontendUrl;
-            sendMail(config, message, config.mailSender, logger);
+            sendMail(config, message, config.mailSender);
 
             result = true;
             return result;
