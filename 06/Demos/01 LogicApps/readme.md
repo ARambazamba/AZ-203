@@ -11,3 +11,6 @@ curl https://raw.githubusercontent.com/MicrosoftDocs/mslearn-route-and-process-d
 
 bash setup-textanalytics.sh
 ```
+# Labs 
+
+[Build automated workflows to integrate data and apps with Azure Logic Apps](https://docs.microsoft.com/en-us/learn/paths/build-workflows-with-logic-apps/)
