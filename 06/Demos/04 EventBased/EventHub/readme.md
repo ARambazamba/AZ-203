@@ -1,40 +1,8 @@
 # Event Hubs
 
-Set Environment Variables
+[Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/)
+[Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/)
 
-```
-NS_NAME="EventHubNameSpace-ap"
-HUB_NAME="EventHubLab-ap"
-```
+# Lab
 
-Create Group & Hub, List permissions
-
-```
-az configure --defaults group=learn-335cb31b-81fb-4407-b68e-97fdde1a3974 location=westus2
-az eventhubs namespace create --name $NS_NAME
-az eventhubs namespace authorization-rule keys list \
-    --name RootManageSharedAccessKey \
-    --namespace-name $NS_NAME
-```
-
-ConStr should look like:
-
-```
-"Endpoint=sb://eventhubnamespace-ap.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=t5QUEbqA2EZiUj8R/N9JfdCQJ4ahyeiWfdw0VIZnfmo="
-```
-
-Create Event Hub
-
-```
-az eventhubs eventhub create --name $HUB_NAME --namespace-name $NS_NAME
-```
-
-Create Storage Acct
-
-```
-STORAGE_NAME="eventhublabap"
-az storage account create --name $STORAGE_NAME --sku Standard_RAGRS --encryption-services blob
-az storage account keys list --account-name $STORAGE_NAME
-az storage account show-connection-string -n $STORAGE_NAME
-az storage container create -n messages --connection-string "<connection string here>"
-```
+[Enable reliable messaging for Big Data applications using Azure Event Hubs](https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/)
