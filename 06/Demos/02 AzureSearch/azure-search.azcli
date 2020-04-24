@@ -1,9 +1,15 @@
-grp=az-203
+rnd=$RANDOM
+grp=az-203-search-$rnd
 loc=westeurope
-srvName=az-search-$RANDOM
+srvName=az-search-$rnd
+strg=az-searchblob-$rnd
 
+az group create -n $grp -l $loc
 
-# create service
+az search service list -g $grp
 
-az search service create -n $srvName -g $grp --sku B
+# Preview command
+az search service create -n $srvName -g $grp --sku basic
 
+# Upload blobs from ./Data here
+az storage account create -n $strg -g $ggrp

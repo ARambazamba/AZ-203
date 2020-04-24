@@ -14,8 +14,6 @@
 
 [Azure Cognitive Search](https://docs.microsoft.com/en-us/azure/search/search-what-is-azure-search)
 
-[az cognitiveservices](https://docs.microsoft.com/en-us/cli/azure/cognitiveservices?view=azure-cli-latest)
-
 ## Develop event-based solutions
 
 [Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/overview)
